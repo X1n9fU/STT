@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>택시 부르기</title>
+</head>
+<body>
+<h3>택시 잡아줘</h3>
+<a href="/location">어디로 모실까요?️</a>
+
+</body>
+<script th:inline="javascript">
+  const WhereToGo = () => {
+    location.href = "/location";
+  }
+</script>
+</html>

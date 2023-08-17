@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <title>현위치 찾기</title>
+
+</head>
+<body>
+<p>현위치 찾는 중</p>
+<div id="map" style="width:100%;height:350px;"></div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7c9312d873a19fa35514a3821dc5181f&libraries=services,clusterer,drawing"></script>
+<script th:inline="javascript">
+
+var geocoder = new kakao.maps.services.Geocoder();
+
+// HTML5의 geolocation으로 사용할 수 있는지 확인합니다
+
+if (navigator.geolocation) {
+
+    // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+    navigator.geolocation.getCurrentPosition(function(position) {
+
+        var lat = position.coords.latitude, // 위도
+            lon = position.coords.longitude; // 경도
+
+        var locPosition = new kakao.maps.LatLng(lat, lon);// 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+
+        //현위치의 위도와 경도를 통해 주소를 가져옵니다.
+        searchDetailAddrFromCoords(locPosition, function(result, status) {
+          if (status === kakao.maps.services.Status.OK) {
+          //만약 도로명 주소가 있으면 도로명 주소, 없으면 지번 주소
+            var detailAddr = !!result[0].road_address ? result[0].road_address.address_name :
+            result[0].address.address_name;
+
+          //바로 주소를 가지고 다른 주소로 옮겨간다.
+            location.href= "/position/" + detailAddr;
+
+          }
+        });
+
+      });
+
+} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+    locPosition = new kakao.maps.LatLng(33.450701, 126.570667);
+}
+
+
+function searchDetailAddrFromCoords(coords, callback) {
+    // 좌표로 법정동 상세 주소 정보를 요청합니다
+    geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
+}
+
+</script>
+</body>
+</html>

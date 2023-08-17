@@ -1,0 +1,22 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://user.cwybtm3i0su1.ap-northeast-2.rds.amazonaws.com:3306/taxiuser?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: admin
+    password: alsrudrla02
+
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  h2:
+    console:
+      enabled: true
