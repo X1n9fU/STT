@@ -13,8 +13,10 @@
 <p th:text="${destination}"></p>
 <hr>
 <form th:action="@{/taxi/call}" method="post">
-    <input type="text" th:value="${current}" name="current" readonly>
-    <input type="text" th:value="${destination}" name="destination" readonly>
+    <input type="hidden" th:value="1" name="currentX" readonly>
+    <input type="hidden" th:value="3" name="destinationX" readonly>
+    <input type="hidden" th:value="2" name="currentY" readonly>
+    <input type="hidden" th:value="4" name="destinationY" readonly>
     <button type="submit">택시 잡아줘</button>
 </form>
 <div id="map" style="width:100%;height:350px;"></div>
@@ -22,12 +24,16 @@
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7c9312d873a19fa35514a3821dc5181f&libraries=services,clusterer,drawing"></script>
 <script th:inline="javascript">
-const CallTaxi=()=>{
-    const current = "[[${current}]]";
-    const destination = "[[${destination}]]";
-    location.href = "/taxi/call" + "?" + "current=" + current
-                         + "&" + "destination="+ destination;
-}
+// const CallTaxi=()=>{
+//     const current = "[[${current}]]";
+//     const destination = "[[${destination}]]";
+//     const currentX = "1";
+//     const currentY="2";
+//     const destinationX="3";
+//     const destinationY="4";
+//     location.href = "/taxi/call" + "?" + "currentX=" + currentX + "&" + "currentY=" + currentX
+//                          + "&" + "destinationX="+ destinationX + "&" + "destinationY="+ destinationY;
+// }
 
 //---------------------------------------------------------------
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div

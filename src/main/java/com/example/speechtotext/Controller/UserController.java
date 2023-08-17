@@ -4,7 +4,9 @@ package com.example.speechtotext.Controller;
 import com.example.speechtotext.Service.TestCoolsms;
 import com.example.speechtotext.entity.UserDB;
 import com.example.speechtotext.repository.UserRepository;
+import com.google.api.Http;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -55,8 +57,11 @@ public class UserController {
     }
 
     @PostMapping("/messageCertificated")
-    public String messageAuth(String messageNumber) {
-        if(userRepository.findByToken(messageNumber) != null) {
+    public String messageAuth(String messageNumber,HttpServletRequest request) {
+        UserDB user = userRepository.findByToken(messageNumber);
+        if( user != null) {
+            HttpSession session = request.getSession();
+            session.setAttribute("user", user.getUserName());
             return "home";
         }
         else {
