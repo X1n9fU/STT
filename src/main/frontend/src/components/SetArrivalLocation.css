@@ -1,0 +1,124 @@
+.div_head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.location1 {
+    padding: 10px;
+    padding-right: 15px;
+    background-color: rgba(230, 230, 230, 0.671);
+    border-radius: 10px;
+    border: none;
+    width: 375px;
+    height: 142px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: lighter;
+    align-items: center;
+    display: flex;
+}
+
+.arrows {
+    background-image: url(/src/arrows.png);
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 20px;
+}
+
+.location2 {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: rgba(230, 230, 230, 0.671);
+    border-radius: 10px;
+    border: none;
+    width: 375px;
+    height: 142px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: lighter;
+    align-items: center;
+    display: flex;
+}
+
+/*
+.location p {
+    padding: 0px 40px;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.location b {
+    text-align: right;
+}
+*/
+
+
+.btn_depLocationConfirm {
+    margin-top: 5px;
+    background-color: #13bc4d;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-size: 35px;
+    width: 400px;
+    height: 90px;
+}
+
+.btn_callTaxi {
+    margin: 15px 0px 10px;
+    background-color: rgb(108, 184, 85);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 33px;
+    width: 400px;
+    height: 100px;
+}
+
+.btn_depLocationConfirm:first-child {
+    margin-right: 5px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 9999;
+}
+
+.modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    max-height: 900px;
+}
+
+input {
+    padding: 10px 80px;
+}
+
+.btn_select {
+    background-color: rgb(108, 184, 85);
+    border: none;
+    font-size: 20px;
+    width: 80px;
+    height: 40px;
+    color: white;
+}

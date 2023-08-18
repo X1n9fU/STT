@@ -1,0 +1,89 @@
+.screen {
+    background-color: white;
+}
+
+.div_head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+}
+
+
+.par_depLocationAsk1 {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 120%;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-left: 5px;
+    padding-bottom: 0px;
+    height: 10px;
+    width: 400px;
+    color: #343434;
+    text-align: left;
+}
+
+.par_depLocationAsk2 {
+    font-size: 30px;
+    font-weight: 550;
+    line-height: 120%;
+    margin-top: 0px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+    height: 10px;
+    width: 400px;
+    color: #343434;
+    text-align: left;
+}
+
+.location_c {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding: 0px 20px;
+    background-color: #eeeeee;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: none;
+    width: 360px;
+    height: 150px;
+    color: #343434;
+    font-size: 40px;
+    font-weight: 500;
+    overflow: auto;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.buttons {
+  
+    text-align: center;
+    align-items: center;
+}
+
+
+.btn_depLocationConfirm1 {
+    margin: 5px 0px 10px;
+    background-color: #13bc4d;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: 500;
+    font-size: 40px;
+    width: 400px;
+    height: 90px;
+}
+
+.btn_depLocationConfirm2 {
+    margin: 5px 0px 10px;
+    background-color: #13bc4d;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: 500;
+    font-size: 40px;
+    width: 400px;
+    height: 90px;
+}
+

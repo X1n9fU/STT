@@ -1,0 +1,61 @@
+.profile_info { 
+    width: 400px;
+    height: 300px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 40px;
+    background-color: #eeeeee;
+    margin-bottom: 0px;
+}
+
+.profile {
+    background-image: url(/src/profile.webp);
+    width: 150px;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 80px;
+    border: solid 1px;
+    margin-left: 125px;
+}
+
+.name {
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.phone_number {
+    font-size: 30px;
+    margin-top: 0px;
+}
+
+
+.car_info {
+    width: 400px;
+    height: 120px;
+    background-color: #13bc4d;
+    margin-top: 0px;
+    padding-top: 15px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;  
+}
+
+.car_number {
+    font-size: 50px;
+    font-weight: 600;
+    color: #eeeeee;
+}
+
+.car_type{
+    font-size: 30px;
+    font-weight: 600;
+    color: #eeeeee;
+}
+
+.arr_time {
+    font-size: 40px;
+    margin-top: 30px;
+    font-weight: 600;
+}
