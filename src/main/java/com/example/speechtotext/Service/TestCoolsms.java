@@ -11,14 +11,14 @@ import java.util.HashMap;
 public class TestCoolsms {
     public static String certifiedPhoneNumber(String phoneNumber, String cerNum) {
 
-        String api_key = "NCSBJYVOQYL1JV73";
-        String api_secret = "YKN5U3NVSZAYPBJL3FIFFWUCOFOOAKMK";
+        String api_key = "NCSZD29AWTJHZSI5";
+        String api_secret = "B8VDCCUGNXXGQYEHFKHBOKXUDQJOBOW8";
 
         Message coolsms = new Message(api_key, api_secret);
 
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("to", phoneNumber);
-        params.put("from", "01091606380");
+        params.put("from", "01063286459");
         params.put("type", "SMS");
         params.put("text", "휴대폰 인증 테스트 메세지 : 인증번호는" + "[" + cerNum + "]" + "입니다.");
         params.put("app_version", "test app 1.2");

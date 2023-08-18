@@ -12,7 +12,7 @@ public class STTService {
 
     public String SpeechToText() throws IOException, InterruptedException {
         //파이썬 파일 실행
-        Process process = Runtime.getRuntime().exec("python C:\\speechtotext\\speechtotext\\src\\stt\\stt.py");
+        Process process = Runtime.getRuntime().exec("python \\speechtotext\\src\\stt\\stt.py");
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream(), Charset.forName("EUC-KR")));
         String line;

@@ -13,6 +13,8 @@ import lombok.NoArgsConstructor;
 @Table(name="user")
 public class UserDB {
 
+    // 얜 좀 전체적으로 바꿔서 그냥 복붙해도댈듯
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -28,11 +30,25 @@ public class UserDB {
 
     @Column
     private String currentY;
+
     @Column
     private String destinationX;
+
     @Column
     private String destinationY;
 
+    public static UserDB toUpdateDB(UserDB userDB) {
+        UserDB userUpdate = new UserDB();
+
+        userUpdate.setId(userDB.getId());
+
+        userUpdate.setCurrentX(userDB.getCurrentX());
+        userUpdate.setCurrentY(userDB.getCurrentY());
+        userUpdate.setDestinationX(userDB.getDestinationX());
+        userUpdate.setDestinationY(userDB.getDestinationY());
+
+        return userUpdate;
+    }
     public static UserDB toEntity(User user){
         UserDB userDB = new UserDB();
         userDB.setUserName(user.getPhone());

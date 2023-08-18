@@ -1,36 +1,20 @@
+import React, { useState } from 'react';
 import './App.css';
-import axios from 'axios';
+import { Routes, Route } from 'react-router-dom';
+import DepartureLocation from "./components/DepartureLocation";
+import SetArrivalLocation from './components/SetArrivalLocation';
+import LoginPage from './components/LoginPage';
+import CallingPage from './components/CallingPage';
 
 function App() {
-
-  var sendData = JSON.stringify({
-    "currentX" : "1111",
-    "currentY" : "2222",
-    "destinationX" : "3333",
-    "destinationY" : "4444"
-  })
-
-
-
-  const handleClick = () => {
-    axios({
-      method: 'post',
-      url: 'http://localhost:8082/taxi/call',
-      data: sendData,
-      headers: {
-            'Content-Type': 'application/json'
-      }
-    }).catch(error => {
-      console.error('오류가 발생했습니다:', error);
-    });
-  }
-
+  
   return (
-    <div>
-      <button onClick={handleClick} style={{fontSize:"35px"}}>
-        Send
-      </button>
-    </div>
+      <Routes>
+        <Route path={"/"} element={<LoginPage />}></Route>
+        <Route path={"/departureLocation"} element={<DepartureLocation />}></Route>
+        <Route path={"/arrivalLocation"} element={<SetArrivalLocation />}></Route>
+        <Route path={"/callingPage"} element={<CallingPage />}></Route>
+      </Routes>
   );
 }
 

@@ -1,5 +1,6 @@
 package com.example.speechtotext.dto;
 
+import com.example.speechtotext.entity.TaxiDriverEntity;
 import lombok.*;
 
 @Getter
@@ -13,4 +14,13 @@ public class Driver {
     private String phone;
     private String CarNumber;
     private String CarType;
+
+    public static Driver toDTO(TaxiDriverEntity taxiDriver) {
+        Driver driver = new Driver();
+        driver.setName(taxiDriver.getName());
+        driver.setPhone(taxiDriver.getPhone());
+        driver.setCarNumber(taxiDriver.getCarNumber());
+        driver.setCarType(taxiDriver.getCarType());
+        return driver;
+    }
 }
